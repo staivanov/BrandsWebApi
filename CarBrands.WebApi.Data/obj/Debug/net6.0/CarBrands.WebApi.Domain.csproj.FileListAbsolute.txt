@@ -1,0 +1,11 @@
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\bin\Debug\net6.0\CarBrands.WebApi.Domain.deps.json
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\bin\Debug\net6.0\CarBrands.WebApi.Domain.dll
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\bin\Debug\net6.0\CarBrands.WebApi.Domain.pdb
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\obj\Debug\net6.0\CarBrands.WebApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\obj\Debug\net6.0\CarBrands.WebApi.Domain.AssemblyInfoInputs.cache
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\obj\Debug\net6.0\CarBrands.WebApi.Domain.AssemblyInfo.cs
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\obj\Debug\net6.0\CarBrands.WebApi.Domain.csproj.CoreCompileInputs.cache
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\obj\Debug\net6.0\CarBrands.WebApi.Domain.dll
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\obj\Debug\net6.0\refint\CarBrands.WebApi.Domain.dll
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\obj\Debug\net6.0\CarBrands.WebApi.Domain.pdb
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\obj\Debug\net6.0\ref\CarBrands.WebApi.Domain.dll

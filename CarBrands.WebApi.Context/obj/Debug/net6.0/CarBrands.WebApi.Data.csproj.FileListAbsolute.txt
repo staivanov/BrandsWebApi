@@ -1,0 +1,17 @@
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\bin\Debug\net6.0\CarBrands.WebApi.Data.deps.json
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\bin\Debug\net6.0\CarBrands.WebApi.Data.runtimeconfig.json
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\bin\Debug\net6.0\CarBrands.WebApi.Data.dll
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\bin\Debug\net6.0\CarBrands.WebApi.Data.pdb
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\bin\Debug\net6.0\CarBrands.WebApi.Domain.dll
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\bin\Debug\net6.0\CarBrands.WebApi.Domain.pdb
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\CarBrands.WebApi.Data.csproj.AssemblyReference.cache
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\CarBrands.WebApi.Data.GeneratedMSBuildEditorConfig.editorconfig
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\CarBrands.WebApi.Data.AssemblyInfoInputs.cache
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\CarBrands.WebApi.Data.AssemblyInfo.cs
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\CarBrands.WebApi.Data.csproj.CoreCompileInputs.cache
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\CarBrands.WebApi.Data.csproj.CopyComplete
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\CarBrands.WebApi.Data.dll
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\refint\CarBrands.WebApi.Data.dll
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\CarBrands.WebApi.Data.pdb
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\CarBrands.WebApi.Data.genruntimeconfig.cache
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\ref\CarBrands.WebApi.Data.dll
