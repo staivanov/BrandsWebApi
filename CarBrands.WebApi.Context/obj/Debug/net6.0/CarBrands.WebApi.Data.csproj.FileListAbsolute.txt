@@ -15,3 +15,4 @@ P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\refint\CarBra
 P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\CarBrands.WebApi.Data.pdb
 P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\CarBrands.WebApi.Data.genruntimeconfig.cache
 P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\ref\CarBrands.WebApi.Data.dll
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Context\obj\Debug\net6.0\CarBrands.WebApi.Data.sourcelink.json

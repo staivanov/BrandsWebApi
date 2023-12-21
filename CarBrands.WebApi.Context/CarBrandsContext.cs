@@ -27,7 +27,8 @@ namespace CarBrands.WebApi.Context
                 Description = @"Dr. Ing. h.c. F. Porsche AG, usually shortened to Porsche,
                                 is a German automobile manufacturer specializing in high-performance sports cars, SUVs and sedans",
                 DateCreated = new DateOnly(1931, 01, 01),
-                Slogan = "There is no substitute."
+                Slogan = "There is no substitute.",
+                HeadquarterId = 1
             };
 
             List<CarModel> porscheModels = new()
@@ -71,20 +72,44 @@ namespace CarBrands.WebApi.Context
                 DateCreated = new DateOnly(1931, 1, 1),
             };
 
-            CountryOfProduction productionCountry = new()
+            List<CountryOfProduction> countriesOfProduction = new()
             {
-                Id = 1,
-                Name = "Germany",
-                Description = "Germany is a country located in the heart of Western Europe." +
-                           " It is bordered by Denmark, Poland, Czechia, Austria, Switzerland, France, Luxembourg, Belgium, Netherlands, the North Sea," +
-                           " and the Baltic Sea. Germany has a strategic location on the North European Plain and along the entrance to the Baltic Sea.",
-                ISO3166Code = "DE",
+                new() {
+                        Id = 1,
+                        Name = "Germany",
+                        Description = "Germany is a country located in the heart of Western Europe." +
+                                       " It is bordered by Denmark, Poland, Czechia, Austria, Switzerland, France, Luxembourg, Belgium, Netherlands, the North Sea," +
+                                       " and the Baltic Sea. Germany has a strategic location on the North European Plain and along the entrance to the Baltic Sea.",
+                        ISO3166Code = "DE"
+                      },
+                new() {
+                        Id = 2,
+                        Name = "Italy",
+                        Description = "Italy is a boot-shaped peninsula that juts out of southern Europe into the Adriatic Sea, Tyrrhenian Sea, Mediterranean Sea," +
+                        " and other waters. Its location has played an important role in its history.",
+                        ISO3166Code = "IT"
+                      },
+                new() {
+                        Id = 3,
+                        Name = "France",
+                        Description = "France is one of the oldest nations on Earth and the most ethnically diverse country in Europe. These deep and broad influences have made" +
+                        " France a world leader throughout history in nearly all aspects of culture, including cuisine" +
+                        ", wine-making, politics, philosophy, music, art, film, fashion, literature, and sports.",
+                        ISO3166Code = "FR"
+                      },
+                new() {
+                        Id = 4,
+                        Name = "United Kingdom",
+                        Description = "The United Kingdom is a state made up of the historic countries of England, Wales and Scotland, as well as Northern Ireland." +
+                        " It is known as the home of both modern parliamentary democracy and the Industrial Revolution.",
+                        ISO3166Code = "GB"
+                      },
             };
 
             modelBuilder.Entity<Headquarter>().HasData(porscheHeadquarter);
             modelBuilder.Entity<CarBrand>().HasData(porscheBrand);
             modelBuilder.Entity<CarModel>().HasData(porscheModels);
-            modelBuilder.Entity<CountryOfProduction>().HasData(productionCountry);
+            modelBuilder.Entity<CountryOfProduction>().HasData(countriesOfProduction);
 
         }
     }

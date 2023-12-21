@@ -17,6 +17,7 @@ namespace CarBrands.WebApi.Domain.Entities
         //Navigation property. Principal
         [ForeignKey("HeadquarterId")]
         public Headquarter Headquarter { get; set; }
+        public int HeadquarterId { get; set; }
 
 
         public CarBrand()

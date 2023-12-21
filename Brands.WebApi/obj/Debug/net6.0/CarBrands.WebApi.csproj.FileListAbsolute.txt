@@ -70,3 +70,4 @@ P:\WebAPIs\Brands.WebApi\Brands.WebApi\bin\Debug\net6.0\runtimes\win-arm\native\
 P:\WebAPIs\Brands.WebApi\Brands.WebApi\bin\Debug\net6.0\runtimes\win-arm64\native\e_sqlite3.dll
 P:\WebAPIs\Brands.WebApi\Brands.WebApi\bin\Debug\net6.0\runtimes\win-x64\native\e_sqlite3.dll
 P:\WebAPIs\Brands.WebApi\Brands.WebApi\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
+P:\WebAPIs\Brands.WebApi\Brands.WebApi\obj\Debug\net6.0\CarBrands.WebApi.sourcelink.json

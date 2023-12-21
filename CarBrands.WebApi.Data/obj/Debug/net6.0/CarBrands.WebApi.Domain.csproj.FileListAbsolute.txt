@@ -9,3 +9,4 @@ P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\obj\Debug\net6.0\CarBrands.WebApi
 P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\obj\Debug\net6.0\refint\CarBrands.WebApi.Domain.dll
 P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\obj\Debug\net6.0\CarBrands.WebApi.Domain.pdb
 P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\obj\Debug\net6.0\ref\CarBrands.WebApi.Domain.dll
+P:\WebAPIs\Brands.WebApi\CarBrands.WebApi.Data\obj\Debug\net6.0\CarBrands.WebApi.Domain.sourcelink.json

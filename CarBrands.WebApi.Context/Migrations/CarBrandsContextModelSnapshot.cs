@@ -46,6 +46,9 @@ namespace CarBrands.WebApi.Data.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("HeadquarterId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -57,6 +60,8 @@ namespace CarBrands.WebApi.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("HeadquarterId");
+
                     b.ToTable("CarBrands");
 
                     b.HasData(
@@ -64,7 +69,8 @@ namespace CarBrands.WebApi.Data.Migrations
                         {
                             Id = 1,
                             DateCreated = new DateOnly(1931, 1, 1),
-                            Description = "Dr. Ing. h.c. F. Porsche AG, usually shortened to Porsche,\r\n                                        is a German automobile\r\n                                        manufacturer specializing in high-performance sports cars, SUVs and sedans",
+                            Description = "Dr. Ing. h.c. F. Porsche AG, usually shortened to Porsche,\r\n                                is a German automobile manufacturer specializing in high-performance sports cars, SUVs and sedans",
+                            HeadquarterId = 1,
                             Name = "Porsche",
                             Slogan = "There is no substitute."
                         });
@@ -195,8 +201,7 @@ namespace CarBrands.WebApi.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CarBrandId")
-                        .IsUnique();
+                    b.HasIndex("CarBrandId");
 
                     b.ToTable("Headquarters");
 
@@ -227,6 +232,17 @@ namespace CarBrands.WebApi.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("CarBrands.WebApi.Domain.Entities.CarBrand", b =>
+                {
+                    b.HasOne("CarBrands.WebApi.Domain.Entities.Headquarter", "Headquarter")
+                        .WithMany()
+                        .HasForeignKey("HeadquarterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Headquarter");
+                });
+
             modelBuilder.Entity("CarBrands.WebApi.Domain.Entities.CarModel", b =>
                 {
                     b.HasOne("CarBrands.WebApi.Domain.Entities.CarBrand", "CarBrand")
@@ -241,8 +257,8 @@ namespace CarBrands.WebApi.Data.Migrations
             modelBuilder.Entity("CarBrands.WebApi.Domain.Entities.Headquarter", b =>
                 {
                     b.HasOne("CarBrands.WebApi.Domain.Entities.CarBrand", "CarBrand")
-                        .WithOne("Headquarter")
-                        .HasForeignKey("CarBrands.WebApi.Domain.Entities.Headquarter", "CarBrandId")
+                        .WithMany()
+                        .HasForeignKey("CarBrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -252,9 +268,6 @@ namespace CarBrands.WebApi.Data.Migrations
             modelBuilder.Entity("CarBrands.WebApi.Domain.Entities.CarBrand", b =>
                 {
                     b.Navigation("CarModels");
-
-                    b.Navigation("Headquarter")
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
