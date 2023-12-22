@@ -17,21 +17,6 @@ namespace CarBrands.WebApi.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.25");
 
-            modelBuilder.Entity("CarBrandCountryOfProduction", b =>
-                {
-                    b.Property<int>("CarBrandId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("CountriesOfProductionId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("CarBrandId", "CountriesOfProductionId");
-
-                    b.HasIndex("CountriesOfProductionId");
-
-                    b.ToTable("CarBrandCountryOfProduction");
-                });
-
             modelBuilder.Entity("CarBrands.WebApi.Domain.Entities.CarBrand", b =>
                 {
                     b.Property<int>("Id")
@@ -69,11 +54,51 @@ namespace CarBrands.WebApi.Data.Migrations
                         {
                             Id = 1,
                             DateCreated = new DateOnly(1931, 1, 1),
-                            Description = "Dr. Ing. h.c. F. Porsche AG, usually shortened to Porsche,\r\n                                is a German automobile manufacturer specializing in high-performance sports cars, SUVs and sedans",
+                            Description = "Dr. Ing. h.c. F. Porsche AG, usually shortened to Porsche,\r\n                                        is a German automobile manufacturer specializing in high-performance sports cars, SUVs and sedans",
                             HeadquarterId = 1,
                             Name = "Porsche",
                             Slogan = "There is no substitute."
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DateCreated = new DateOnly(1916, 3, 7),
+                            Description = "The BMW Group is the world's leading provider of premium cars and motorcycles and the home of the BMW, MINI,\r\n                        Rolls-Royce and BMW Motorrad brands. Our vehicles and products are tailored to the needs of our customers and constantly enhanced –\r\n                        with a clear focus on sustainability and the conservation of resources.",
+                            HeadquarterId = 2,
+                            Name = "BMW",
+                            Slogan = "Sheer Driving Pleasure"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DateCreated = new DateOnly(1927, 7, 28),
+                            Description = "With Mercedes-Benz AG, we are one of the leading global suppliers of\r\n                        high-end passenger cars and premium vans.\r\n                                            Mercedes-Benz Mobility AG offers financing, leasing, car subscription and car rental,\r\n                        fleet management, digital services for charging and payment,\r\n                    insurance brokerage, as well as innovative mobility services.",
+                            HeadquarterId = 3,
+                            Name = "Mercedes"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DateCreated = new DateOnly(1937, 5, 28),
+                            Description = "The Volkswagen brand is one of the largest car manufacturers in the world. For more than 70 years,\r\n                        we have been making innovative technologies, the highest quality and attractive designs accessible to many people – with the likes \r\n                        of bestsellers such as the Beetle, the Golf and the all-electric ID.",
+                            HeadquarterId = 4,
+                            Name = "VW"
                         });
+                });
+
+            modelBuilder.Entity("CarBrands.WebApi.Domain.Entities.CarBrandCountryOfProduction", b =>
+                {
+                    b.Property<int>("CarBrandId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CountryOfProductionId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("CarBrandId", "CountryOfProductionId");
+
+                    b.HasIndex("CountryOfProductionId");
+
+                    b.ToTable("CarBrandCountryOfProduction");
                 });
 
             modelBuilder.Entity("CarBrands.WebApi.Domain.Entities.CarModel", b =>
@@ -170,6 +195,27 @@ namespace CarBrands.WebApi.Data.Migrations
                             Description = "Germany is a country located in the heart of Western Europe. It is bordered by Denmark, Poland, Czechia, Austria, Switzerland, France, Luxembourg, Belgium, Netherlands, the North Sea, and the Baltic Sea. Germany has a strategic location on the North European Plain and along the entrance to the Baltic Sea.",
                             ISO3166Code = "DE",
                             Name = "Germany"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Italy is a boot-shaped peninsula that juts out of southern Europe into the Adriatic Sea, Tyrrhenian Sea, Mediterranean Sea, and other waters. Its location has played an important role in its history.",
+                            ISO3166Code = "IT",
+                            Name = "Italy"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "France is one of the oldest nations on Earth and the most ethnically diverse country in Europe. These deep and broad influences have made France a world leader throughout history in nearly all aspects of culture, including cuisine, wine-making, politics, philosophy, music, art, film, fashion, literature, and sports.",
+                            ISO3166Code = "FR",
+                            Name = "France"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "The United Kingdom is a state made up of the historic countries of England, Wales and Scotland, as well as Northern Ireland. It is known as the home of both modern parliamentary democracy and the Industrial Revolution.",
+                            ISO3166Code = "GB",
+                            Name = "United Kingdom"
                         });
                 });
 
@@ -208,28 +254,31 @@ namespace CarBrands.WebApi.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            Address = "Porscheplatz 1 in 70435 Stuttgart",
-                            CarBrandId = 1,
-                            DateCreated = new DateOnly(1931, 1, 1),
-                            Description = "Main headquarter for Porsche World.",
-                            Name = "Porsche Automobil Holding SE"
+                            Id = 2,
+                            Address = "Am Riesenfeld area of Munich",
+                            CarBrandId = 0,
+                            DateCreated = new DateOnly(1972, 1, 1),
+                            Description = "The building has served as the global corporate headquarters of German automaker BMW since 1973. It was declared a protected historic building in 1999, and it is often cited as one of the most notable examples of modern architecture in Munich. Extensive renovations commenced in 2004 and were completed in 2006.",
+                            Name = "BMW Tower"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Address = "Mercedesstraße 120\r\n70372 Stuttgart-Untertürkheim",
+                            CarBrandId = 0,
+                            DateCreated = new DateOnly(1926, 1, 1),
+                            Description = "At the Headquarters of our international company at the location of Stuttgart, employees are working in various central functions and services and give the impetus for our way to a successful future.",
+                            Name = "Mercedes-Benz Group Headquarters"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Address = "Berliner Ring 2, 38440 Wolfsburg",
+                            CarBrandId = 0,
+                            DateCreated = new DateOnly(1938, 1, 1),
+                            Description = "No information is provided.",
+                            Name = "Volkswagen Group Tower"
                         });
-                });
-
-            modelBuilder.Entity("CarBrandCountryOfProduction", b =>
-                {
-                    b.HasOne("CarBrands.WebApi.Domain.Entities.CarBrand", null)
-                        .WithMany()
-                        .HasForeignKey("CarBrandId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CarBrands.WebApi.Domain.Entities.CountryOfProduction", null)
-                        .WithMany()
-                        .HasForeignKey("CountriesOfProductionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("CarBrands.WebApi.Domain.Entities.CarBrand", b =>
@@ -241,6 +290,21 @@ namespace CarBrands.WebApi.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Headquarter");
+                });
+
+            modelBuilder.Entity("CarBrands.WebApi.Domain.Entities.CarBrandCountryOfProduction", b =>
+                {
+                    b.HasOne("CarBrands.WebApi.Domain.Entities.CarBrand", null)
+                        .WithMany("CarBrandCountryOfProductions")
+                        .HasForeignKey("CarBrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CarBrands.WebApi.Domain.Entities.CountryOfProduction", null)
+                        .WithMany("CarBrandCountryOfProductions")
+                        .HasForeignKey("CountryOfProductionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("CarBrands.WebApi.Domain.Entities.CarModel", b =>
@@ -267,7 +331,14 @@ namespace CarBrands.WebApi.Data.Migrations
 
             modelBuilder.Entity("CarBrands.WebApi.Domain.Entities.CarBrand", b =>
                 {
+                    b.Navigation("CarBrandCountryOfProductions");
+
                     b.Navigation("CarModels");
+                });
+
+            modelBuilder.Entity("CarBrands.WebApi.Domain.Entities.CountryOfProduction", b =>
+                {
+                    b.Navigation("CarBrandCountryOfProductions");
                 });
 #pragma warning restore 612, 618
         }

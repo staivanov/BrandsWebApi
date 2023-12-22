@@ -14,6 +14,9 @@ namespace CarBrands.WebApi.Domain.Entities
         public List<CarModel> CarModels { get; set; }
 
         public List<CountryOfProduction> CountriesOfProduction { get; set; }
+        public List<CarBrandCountryOfProduction> CarBrandCountryOfProductions { get; set; }
+            = new();
+
         //Navigation property. Principal
         [ForeignKey("HeadquarterId")]
         public Headquarter Headquarter { get; set; }

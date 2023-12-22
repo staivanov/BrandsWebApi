@@ -20,18 +20,55 @@ namespace CarBrands.WebApi.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            CarBrand porscheBrand = new()
+            List<CarBrand> brands = new()
             {
-                Id = 1,
-                Name = "Porsche",
-                Description = @"Dr. Ing. h.c. F. Porsche AG, usually shortened to Porsche,
-                                is a German automobile manufacturer specializing in high-performance sports cars, SUVs and sedans",
-                DateCreated = new DateOnly(1931, 01, 01),
-                Slogan = "There is no substitute.",
-                HeadquarterId = 1
+                new()
+                    {
+                        Id = 1,
+                        Name = "Porsche",
+                        Description = @"Dr. Ing. h.c. F. Porsche AG, usually shortened to Porsche,
+                                        is a German automobile manufacturer specializing in high-performance sports cars, SUVs and sedans",
+                        DateCreated = new DateOnly(1931, 01, 01),
+                        Slogan = "There is no substitute.",
+                        HeadquarterId = 1,
+                 },
+                new()
+                 {
+                     Id = 2,
+                     Name = "BMW",
+                     Description = @"The BMW Group is the world's leading provider of premium cars and motorcycles and the home of the BMW, MINI,
+                        Rolls-Royce and BMW Motorrad brands. Our vehicles and products are tailored to the needs of our customers and constantly enhanced –
+                        with a clear focus on sustainability and the conservation of resources.",
+                     DateCreated = new DateOnly(1916, 3, 7),
+                     Slogan = "Sheer Driving Pleasure",
+                     HeadquarterId = 2,
+                 },
+                new()
+                {
+                    Id = 3,
+                    Name = "Mercedes",
+                    Description = @"With Mercedes-Benz AG, we are one of the leading global suppliers of
+                        high-end passenger cars and premium vans.
+                                            Mercedes-Benz Mobility AG offers financing, leasing, car subscription and car rental,
+                        fleet management, digital services for charging and payment,
+                    insurance brokerage, as well as innovative mobility services.",
+                    DateCreated = new DateOnly(1927, 7, 28),
+                    HeadquarterId = 3
+                },
+                new()
+                {
+                    Id = 4,
+                    Name = "VW",
+                    Description = @"The Volkswagen brand is one of the largest car manufacturers in the world. For more than 70 years,
+                        we have been making innovative technologies, the highest quality and attractive designs accessible to many people – with the likes 
+                        of bestsellers such as the Beetle, the Golf and the all-electric ID.",
+                    DateCreated = new DateOnly(1937, 5, 28),
+                    HeadquarterId = 4
+                },
+
             };
 
-            List<CarModel> porscheModels = new()
+            List<CarModel> carModels = new()
                     {
                         new()
                         {
@@ -62,14 +99,18 @@ namespace CarBrands.WebApi.Context
                         }
             };
 
-            Headquarter porscheHeadquarter = new()
+            Headquarter[] headquarters =
             {
-                Id = 1,
-                CarBrandId = 1,
-                Name = "Porsche Automobil Holding SE",
-                Description = "Main headquarter for Porsche World.",
-                Address = "Porscheplatz 1 in 70435 Stuttgart",
-                DateCreated = new DateOnly(1931, 1, 1),
+                //new(1, "Porsche Automobil Holding SE", "Main headquarter for Porsche World.",
+                //"Porscheplatz 1 in 70435 Stuttgart", new DateOnly(1931, 1, 1)),
+                new(2, "BMW Tower", "The building has served as the global corporate headquarters of German automaker BMW since 1973." +
+                " It was declared a protected historic building in 1999, and it is often cited as one of " +
+                "the most notable examples of modern architecture in Munich. " +
+                "Extensive renovations commenced in 2004 and were completed in 2006.", "Am Riesenfeld area of Munich", new DateOnly(1972, 1,1)),
+                new(3, "Mercedes-Benz Group Headquarters", "At the Headquarters of our international company at the location of Stuttgart," +
+                " employees are working in various central functions and services and give " +
+                "the impetus for our way to a successful future.", "Mercedesstraße 120\r\n70372 Stuttgart-Untertürkheim", new DateOnly(1926, 1,1)),
+                new(4, "Volkswagen Group Tower", "No information is provided.", "Berliner Ring 2, 38440 Wolfsburg", new DateOnly(1938,1,1)),
             };
 
             List<CountryOfProduction> countriesOfProduction = new()
@@ -106,11 +147,14 @@ namespace CarBrands.WebApi.Context
                       },
             };
 
-            modelBuilder.Entity<Headquarter>().HasData(porscheHeadquarter);
-            modelBuilder.Entity<CarBrand>().HasData(porscheBrand);
-            modelBuilder.Entity<CarModel>().HasData(porscheModels);
+            modelBuilder.Entity<Headquarter>().HasData(headquarters);
+            modelBuilder.Entity<CarBrand>().HasData(brands);
+            modelBuilder.Entity<CarModel>().HasData(carModels);
             modelBuilder.Entity<CountryOfProduction>().HasData(countriesOfProduction);
-
+            modelBuilder.Entity<CarBrand>()
+                .HasMany(c => c.CountriesOfProduction)
+                .WithMany(b => b.CarBrand)
+                .UsingEntity<CarBrandCountryOfProduction>();
         }
     }
 }
