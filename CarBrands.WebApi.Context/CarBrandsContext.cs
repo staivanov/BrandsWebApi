@@ -91,8 +91,35 @@ namespace CarBrands.WebApi.Context
                         buses, minivans, trucks, specialty cars, recreational and sport-utility vehicles.",
                     DateCreated = new DateOnly(1937, 8, 28),
                     HeadquarterId = 7
+                },
+                new()
+                {
+                    Id = 8,
+                    Name = "Honda",
+                    Description = @"Honda is a mobility company powered by everyone’s dreams, creating mobility that helps and inspires people,
+                        in a wide range of fields such including motorcycles, automobiles, power products and aircraft.",
+                    DateCreated = new DateOnly(1948, 9, 24),
+                    HeadquarterId = 8
+                },
+                new()
+                {
+                    Id = 9,
+                    Name = "Lexus",
+                    Description = @"Lexus (レクサス, Rekusasu) is the luxury vehicle division of the Japanese automaker Toyota Motor Corporation.
+                        The Lexus brand is marketed in more than 90 countries and territories worldwide and is Japan's largest-selling make of premium cars.
+                        It has ranked among the 10 largest Japanese global brands in market value.",
+                    DateCreated = new DateOnly(1989, 1, 18),
+                    HeadquarterId = 9
+                },
+                new()
+                {
+                    Id = 10,
+                    Name = "Mazda",
+                    Description = @"Mazda Motor Corporation (マツダ株式会社, Matsuda Kabushiki gaisha), also known as simply Mazda, is a Japanese multinational
+                        automotive manufacturer headquartered in Fuchū, Hiroshima, Japan.",
+                    DateCreated = new DateOnly(1920, 1, 30),
+                    HeadquarterId = 10
                 }
-                    
             };
 
             List<CarModel> carModels = new()
@@ -128,8 +155,8 @@ namespace CarBrands.WebApi.Context
 
             Headquarter[] headquarters =
             {
-                //new(1, "Porsche Automobil Holding SE", "Main headquarter for Porsche World.",
-                //"Porscheplatz 1 in 70435 Stuttgart", new DateOnly(1931, 1, 1)),
+                new(1, "Porsche Automobil Holding SE", "Main headquarter for Porsche World.",
+                "Porscheplatz 1 in 70435 Stuttgart", new DateOnly(1931, 1, 1)),
                 new(2, "BMW Tower", "The building has served as the global corporate headquarters of German automaker BMW since 1973." +
                 " It was declared a protected historic building in 1999, and it is often cited as one of " +
                 "the most notable examples of modern architecture in Munich. " +
@@ -188,6 +215,24 @@ namespace CarBrands.WebApi.Context
                         " It is known as the home of both modern parliamentary democracy and the Industrial Revolution.",
                         ISO3166Code = "GB"
                       },
+                new()
+                {
+                    Id = 5,
+                    Name = "Japan",
+                    Description = @"Japan is a part of the Ring of Fire, and spans an archipelago of 14,125 islands, with the five main islands being Hokkaido,
+                        Honshu (the ""mainland""), Shikoku, Kyushu, and Okinawa. Tokyo is the nation's capital and largest city, followed by
+                        Yokohama, Osaka, Nagoya, Sapporo, Fukuoka, Kobe, and Kyoto.",
+                    ISO3166Code = "JP"
+                },
+                new()
+                {
+                    Id = 6,
+                    Name = "South Korea",
+                    Description = @"South Korea, officially the Republic of Korea (ROK), is a country in East Asia. It constitutes the southern part of the 
+                        Korean Peninsula and borders North Korea along the Korean Demilitarized Zone. The country's western border is formed by the Yellow Sea,
+                        while its eastern border is defined by the Sea of Japan.",
+                    ISO3166Code = "KR"
+                }
             };
 
             modelBuilder.Entity<Headquarter>().HasData(headquarters);
